@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "ConsoleClient";
+
+import "google/protobuf/empty.proto";
+
+package weather;
+
+service Weather {
+	rpc GetTodayWeatherAsync (google.protobuf.Empty) returns (WeatherReply);
+}
+
+message WeatherReply{
+	string temp = 1;
+	string desc = 2;
+}
